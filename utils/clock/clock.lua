@@ -1,11 +1,11 @@
 local monitor
 
 function GameTime()
-  return "Day " .. os.day() .. " - " .. textutils.formatTime(os.time())
+  return "Day " .. day() .. " - " .. textutils.formatTime(time())
 end
 
 function RealTime()
-  return os.date("%b-%d - %I:%M %p")
+  return date("%b-%d - %I:%M %p")
 end
 
 function Init()
@@ -17,5 +17,5 @@ while true do
   message = GameTime()
   print(message)
   monitor.write(message)
-  os.sleep(3)
+  sleep(3)
 end
