@@ -1,11 +1,11 @@
 local monitor
 
 function GameTime()
-  return "Day " .. day() .. " - " .. textutils.formatTime(time())
+  return "Day " .. os.day() .. " - " .. textutils.formatTime(os.time())
 end
 
 function RealTime()
-  return date("%b-%d - %I:%M %p")
+  return os.date("%b-%d - %I:%M %p")
 end
 
 function Init()
