@@ -1,14 +1,14 @@
 local monitor
 
-function getGameTime()
+function GetGameTime()
   return "Day " .. os.day() .. " - " .. textutils.formatTime(os.time())
 end
 
-function getRealTime()
+function GetRealTime()
   return os.date("%b-%d - %I:%M %p")
 end
 
-function displayMessage(message)
+function DisplayMessage(message)
   print(message)
   term.redirect(monitor)
   print(message)
@@ -17,13 +17,14 @@ end
 
 function Init()
   monitor = peripheral.find("monitor") or error("error: no monitor detected")
+  monitor.setTextScale(3)
 end
 
 Init()
 while true do
-  displayMessage(getGameTime)
+  DisplayMessage(GetGameTime())
   sleep(3)
-  displayMessage(getRealTime)
+  DisplayMessage(GetRealTime())
   sleep(3)
-  displayMessage("tomen awita")
+  DisplayMessage("tomen awita")
 end
