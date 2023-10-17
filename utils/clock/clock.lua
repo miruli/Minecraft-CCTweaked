@@ -27,4 +27,5 @@ while true do
   DisplayMessage(GetRealTime())
   sleep(3)
   DisplayMessage("tomen awita")
+  sleep(3)
 end
