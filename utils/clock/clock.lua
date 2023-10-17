@@ -1,11 +1,18 @@
 local monitor
 
-function GameTime()
+function getGameTime()
   return "Day " .. os.day() .. " - " .. textutils.formatTime(os.time())
 end
 
-function RealTime()
+function getRealTime()
   return os.date("%b-%d - %I:%M %p")
+end
+
+function displayMessage(message)
+  print(message)
+  term.redirect(monitor)
+  print(message)
+  term.redirect(term.native())
 end
 
 function Init()
@@ -14,10 +21,9 @@ end
 
 Init()
 while true do
-  message = GameTime()
-  print(message)
-  term.redirect(monitor)
-  print(message)
-  term.redirect(term.native())
+  displayMessage(getGameTime)
   sleep(3)
+  displayMessage(getRealTime)
+  sleep(3)
+  displayMessage("tomen awita")
 end
