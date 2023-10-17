@@ -16,6 +16,8 @@ Init()
 while true do
   message = GameTime()
   print(message)
-  monitor.write(message)
+  term.redirect(monitor)
+  print(message)
+  term.redirect(term.native())
   sleep(3)
 end
