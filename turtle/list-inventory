@@ -1,5 +1,4 @@
-
-function selectNextSlotWith(nameFilter)
+function listInventory()
   for i = 1, 16, 1 do
     print("selecting slot " .. i) 
     turtle.select(i) 
@@ -9,5 +8,7 @@ function selectNextSlotWith(nameFilter)
     else 
       print("item not found") 
     end
-    return 16
+  end
 end
+
+listInventory()
