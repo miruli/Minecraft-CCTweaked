@@ -3,7 +3,7 @@ function dropFlint()
     turtle.select(i) 
     turtle.suckDown()
     itemDetail = turtle.getItemDetail()
-    if (string.find(itemDetail.name, "flint")) then turtle.drop() end
+    if (itemDetail ~= nil and string.find(itemDetail.name, "flint")) then turtle.drop() end
   end
 end
 
